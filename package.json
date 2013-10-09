@@ -1,0 +1,26 @@
+{
+  "name": "mongoose-access-gen",
+  "version": "0.0.1",
+  "main": "index.js",
+  "description": "A little mongoose-plugin for generating array property adders and deleters",
+  "homepage": "https://github.com/yamadapc/mongoose-access-gen",
+  "bugs": "https://github.com/yamadapc/mongoose-access-gen/issues",
+  "author": {
+    "name": "Yamada",
+    "email": "tacla.yamada@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yamadapc/mongoose-access-gen"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "dependencies": {
+    "underscore": "latest"
+  },
+  "devDependencies": {
+  }
+}
