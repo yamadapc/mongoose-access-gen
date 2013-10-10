@@ -21,7 +21,7 @@ module.exports = function(schema) {
 
       // Return 'this' as a monadic value
       return this;
-    };
+    }.bind(this);
   };
 
   /**
@@ -43,7 +43,7 @@ module.exports = function(schema) {
 
       // Return 'this' as a momadic value
       return this;
-    };
+    }.bind(this);
   };
 
   /**
@@ -65,7 +65,7 @@ module.exports = function(schema) {
 
       // Return 'this' as a momadic value
       return this;
-    };
+    }.bind(this);
   };
 
   /**
@@ -87,6 +87,6 @@ module.exports = function(schema) {
 
       // Return 'this' as a momadic value
       return this;
-    };
+    }.bind(this);
   };
 };
