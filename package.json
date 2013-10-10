@@ -22,5 +22,8 @@
     "underscore": "latest"
   },
   "devDependencies": {
+    "should": "latest",
+    "mocha": "latest",
+    "mongoose": "latest"
   }
 }

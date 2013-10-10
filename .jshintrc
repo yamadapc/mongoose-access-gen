@@ -6,9 +6,10 @@
   "newcap": true,
   "noarg": true,
   "sub": true,
-  "undef": true,
+  "node": true,
   "unused": true,
   "boss": true,
+  "mocha": true,
   "eqnull": true,
   "node": true
 }

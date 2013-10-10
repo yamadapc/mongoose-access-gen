@@ -3,6 +3,10 @@ var _ = require('underscore');
 module.exports = function(schema) {
 
   /**
+   * Private functions
+   * ------------------------------------------------------------------------*/
+
+  /**
    * #_genAdd(key)
    * Generates the adding function for a document's 'key' property
    * @param {String} key
@@ -89,4 +93,30 @@ module.exports = function(schema) {
       return this;
     };
   };
+
+  /**
+   * Util functions
+   * ------------------------------------------------------------------------*/
+
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  function methodName(method_type, node_name) {
+    var method_name = method_type + capitalize(node_name);
+    return _.last(method_name) === 's' ? _.initial(method_name).join('') : method_name;
+  }
+
+  /**
+   * Function generation
+   * ------------------------------------------------------------------------*/
+
+  _.each(schema.tree, function(node, node_name) {
+    var method_types = node instanceof Array ? ['add', 'del'] : ['set', 'unset'];
+    _.each(method_types, function(method_type) {
+      var method_name = methodName(method_type, node_name),
+          method = schema.methods['_gen'+capitalize(method_type)](node_name);
+      schema.methods[method_name] = method;
+    });
+  });
 };
