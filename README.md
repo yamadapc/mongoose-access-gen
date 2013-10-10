@@ -29,6 +29,21 @@ comedian._genDel('jokes') ('A haskell programmer walks into a bar (...)');
 // And values
 comedian._genSet('laughing') (true);
 
+// And it automatically generates useless methods
+var funniest_joke = 'Objective C++ (that\'s all)';
+
+comedian.addJoke(funniest_joke);
+comedian.jokes.indexOf(funniest_joke) !== -1 // true
+
+comedian.delJoke(funniest_joke);
+comedian.jokes.indexOf(funniest_joke)        // -1
+
+comedian.setLaughing(true);
+comedian.laughing                            // true
+
+comedian.unsetLaughing();
+comedian.laughing                            // undefined
+
 [...]
 ```
 
