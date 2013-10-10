@@ -11,7 +11,7 @@ module.exports = function(schema) {
 
   schema.methods._genAdd = function(key) {
     return function(item, callback) {
-      // Set property or add item to it (if its an Array)
+      // Add item to property
       this[key].push(item);
 
       // Save the document, if a callback is provided
@@ -33,7 +33,7 @@ module.exports = function(schema) {
 
   schema.methods._genDel = function(key) {
     return function(item, callback) {
-      // Unset property or del item from it (if its an Array) 
+      // Del item from property
       this[key] = _.without(this[key], item);
 
       // Save the document, if a callback is provided
@@ -41,7 +41,51 @@ module.exports = function(schema) {
         this.save(callback);
       }
 
-      // Return 'this' as a nomadic value
+      // Return 'this' as a momadic value
+      return this;
+    };
+  };
+
+  /**
+   * #_genSet(key)
+   * Generates a setter for a document's 'key' property
+   * @param {String} key
+   * @returns {Function} set(item, callback)
+   */
+
+  schema.methods._genSet = function(key) {
+    return function(item, callback) {
+      // Set property as item
+      this[key] = item;
+
+      // Save the document, if a callback is provided
+      if(callback) {
+        this.save(callback);
+      }
+
+      // Return 'this' as a momadic value
+      return this;
+    };
+  };
+
+  /**
+   * #_genSet(key)
+   * Generates a unsetter for a document's 'key' property
+   * @param {String} key
+   * @returns {Function} unset(callback)
+   */
+
+  schema.methods._genUnset = function(key) {
+    return function(callback) {
+      // Unset property
+      this[key] = undefined;
+
+      // Save the document, if a callback is provided
+      if(callback) {
+        this.save(callback);
+      }
+
+      // Return 'this' as a momadic value
       return this;
     };
   };
