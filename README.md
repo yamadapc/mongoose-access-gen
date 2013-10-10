@@ -26,6 +26,9 @@ var Comedian = mongoose.model('Comedian', ComedianSchema),
 comedian._genAdd('jokes') ('I\'m a C programmer (...)');
 comedian._genDel('jokes') ('A haskell programmer walks into a bar (...)');
 
+// And values
+comedian._genSet('laughing') (true);
+
 [...]
 ```
 
