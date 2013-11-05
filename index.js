@@ -38,7 +38,11 @@ module.exports = function(schema) {
   schema.methods._genDel = function(key) {
     return function(item, callback) {
       // Del item from property
-      this[key] = _.without(this[key], item);
+      this[key] = this[key].filter(function(value) {
+        if(value.toString) value = value.toString();
+        if(item.toString)  item  = item.toString();
+        return value != item;
+      });
 
       // Save the document, if a callback is provided
       if(callback) {
