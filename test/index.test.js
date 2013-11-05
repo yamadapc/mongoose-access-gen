@@ -55,7 +55,7 @@ describe('Schema', function() {
       done();
     });
 
-    it('should add a joke to the doc', function(done) {
+    it('should del a joke from the doc', function(done) {
       var joke = 'A haskell programmer walks into a bar ...';
       doc.delJoke(joke);
       doc.jokes.should.have.lengthOf(n_jokes-1);

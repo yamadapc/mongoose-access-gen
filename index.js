@@ -19,9 +19,7 @@ module.exports = function(schema) {
       this[key].push(item);
 
       // Save the document, if a callback is provided
-      if(callback) {
-        this.save(callback);
-      }
+      if(callback) this.save(callback);
 
       // Return 'this' as a monadic value
       return this;
@@ -45,11 +43,9 @@ module.exports = function(schema) {
       });
 
       // Save the document, if a callback is provided
-      if(callback) {
-        this.save(callback);
-      }
+      if(callback) this.save(callback);
 
-      // Return 'this' as a momadic value
+      // Return 'this' as a monadic value
       return this;
     };
   };
@@ -67,11 +63,9 @@ module.exports = function(schema) {
       this[key] = item;
 
       // Save the document, if a callback is provided
-      if(callback) {
-        this.save(callback);
-      }
+      if(callback) this.save(callback);
 
-      // Return 'this' as a momadic value
+      // Return 'this' as a monadic value
       return this;
     };
   };
@@ -89,11 +83,9 @@ module.exports = function(schema) {
       this[key] = undefined;
 
       // Save the document, if a callback is provided
-      if(callback) {
-        this.save(callback);
-      }
+      if(callback) this.save(callback);
 
-      // Return 'this' as a momadic value
+      // Return 'this' as a monadic value
       return this;
     };
   };

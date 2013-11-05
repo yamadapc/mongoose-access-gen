@@ -9,6 +9,9 @@
     "name": "Yamada",
     "email": "tacla.yamada@gmail.com"
   },
+  "scripts": {
+    "test": "mocha -R spec test/*.test.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/yamadapc/mongoose-access-gen"
