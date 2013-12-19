@@ -1,6 +1,6 @@
 {
   "name": "mongoose-access-gen",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "description": "A little mongoose-plugin for generating array property adders and deleters",
   "homepage": "https://github.com/yamadapc/mongoose-access-gen",
@@ -22,7 +22,7 @@
     }
   ],
   "dependencies": {
-    "underscore": "latest"
+    "underscore": "~1.5.*"
   },
   "devDependencies": {
     "should": "latest",
