@@ -5,7 +5,14 @@
   "description": "A little mongoose-plugin for generating array property adders and deleters",
   "homepage": "https://github.com/yamadapc/mongoose-access-gen",
   "bugs": "https://github.com/yamadapc/mongoose-access-gen/issues",
-  "keywords": [ "get", "set", "add", "del", "array", "mongoose" ],
+  "keywords": [
+    "get",
+    "set",
+    "add",
+    "del",
+    "array",
+    "mongoose"
+  ],
   "author": {
     "name": "Yamada",
     "email": "tacla.yamada@gmail.com"
@@ -23,11 +30,11 @@
     }
   ],
   "dependencies": {
-    "underscore": "~1.5.*"
+    "underscore": "~1.8.3"
   },
   "devDependencies": {
     "should": "latest",
     "mocha": "latest",
     "mongoose": "latest"
   }
-}
+}undefined
